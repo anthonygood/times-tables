@@ -7,12 +7,19 @@
 //
 
 #include "MQuestion.hpp"
+#include <stdlib.h>
 
 MQuestion::MQuestion(int min, int max)
 {
-    factor1 = 1;
-    factor2 = 2;
+    int seed = time(NULL);
+    factor1 = get_rand(seed, max);
+    factor2 = get_rand(seed, max);
     return;
+}
+
+int MQuestion::get_rand(int seed, int max)
+{
+    return rand() % max + 1;
 }
 
 bool MQuestion::answer(int answer) const
