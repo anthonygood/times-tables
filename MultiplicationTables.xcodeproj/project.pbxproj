@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		61B38A891CF4D53900D97EFF /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 61B38A881CF4D53900D97EFF /* main.cpp */; };
+		61B38A911CF4D62A00D97EFF /* MultiplicationGame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 61B38A8F1CF4D62A00D97EFF /* MultiplicationGame.cpp */; };
+		61B38A941CF4DEF000D97EFF /* MQuestion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 61B38A921CF4DEF000D97EFF /* MQuestion.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +27,10 @@
 /* Begin PBXFileReference section */
 		61B38A851CF4D53900D97EFF /* MultiplicationTables */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MultiplicationTables; sourceTree = BUILT_PRODUCTS_DIR; };
 		61B38A881CF4D53900D97EFF /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		61B38A8F1CF4D62A00D97EFF /* MultiplicationGame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MultiplicationGame.cpp; sourceTree = "<group>"; };
+		61B38A901CF4D62A00D97EFF /* MultiplicationGame.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MultiplicationGame.hpp; sourceTree = "<group>"; };
+		61B38A921CF4DEF000D97EFF /* MQuestion.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MQuestion.cpp; sourceTree = "<group>"; };
+		61B38A931CF4DEF000D97EFF /* MQuestion.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MQuestion.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,10 @@
 			isa = PBXGroup;
 			children = (
 				61B38A881CF4D53900D97EFF /* main.cpp */,
+				61B38A8F1CF4D62A00D97EFF /* MultiplicationGame.cpp */,
+				61B38A901CF4D62A00D97EFF /* MultiplicationGame.hpp */,
+				61B38A921CF4DEF000D97EFF /* MQuestion.cpp */,
+				61B38A931CF4DEF000D97EFF /* MQuestion.hpp */,
 			);
 			path = MultiplicationTables;
 			sourceTree = "<group>";
@@ -119,6 +129,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				61B38A891CF4D53900D97EFF /* main.cpp in Sources */,
+				61B38A941CF4DEF000D97EFF /* MQuestion.cpp in Sources */,
+				61B38A911CF4D62A00D97EFF /* MultiplicationGame.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,6 +251,7 @@
 				61B38A8E1CF4D53900D97EFF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
