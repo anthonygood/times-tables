@@ -29,7 +29,6 @@ void play_game()
 {
     for(int i = 0; i < game.get_question_count(); i++)
     {
-//        ask_question(game.new_question());
         
         std::cout << game.new_question().to_string();
 
@@ -40,11 +39,5 @@ void play_game()
     }
     
     game.review(std::cout);
-    return;
-}
-
-void ask_question(MQuestion question)
-{
-    std::cout << question.to_string();
     return;
 }
