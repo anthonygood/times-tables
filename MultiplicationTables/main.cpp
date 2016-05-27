@@ -29,7 +29,9 @@ void play_game()
 {
     for(int i = 0; i < game.get_question_count(); i++)
     {
-        ask_question(game.new_question());
+//        ask_question(game.new_question());
+        
+        std::cout << game.new_question().to_string();
 
         int  answer = game.get_answer(std::cin);
         

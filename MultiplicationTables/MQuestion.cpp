@@ -29,7 +29,7 @@ bool MQuestion::answer(int answer)
     return check(user_answer);
 }
 
-bool MQuestion::check(int answer) const { return user_answer == answer; }
+bool MQuestion::check(int answer) const { return product() == answer; }
 
 std::string MQuestion::to_string() const
 {

@@ -50,12 +50,14 @@ bool MTableGame::answer_question_at(int index, int answer)
 
 void MTableGame::review(std::ostream& output)
 {
-    output << "\nReview\n======\n";
+    output << "\n==========\n  Review\n==========\n";
     for(int i = 0; i < questions_and_answers.size(); i++)
     {
         MQuestion q = questions_and_answers.at(i);
-        output << q.to_string() << q.get_user_answer() << " ";
-        feedback(output, q.get_user_answer());
+        int user_answer = q.get_user_answer();
+
+        output << q.to_string() << user_answer << " ";
+        feedback(output, q.check(user_answer));
     }
 }
 
