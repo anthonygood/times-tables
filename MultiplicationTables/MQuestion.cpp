@@ -14,7 +14,8 @@ MQuestion::MQuestion(int min, int max)
 {
     factor1 = get_rand(max);
     factor2 = get_rand(max);
-    user_answer = 911;
+    user_answer = -1;
+    created_at = time(0);
     return;
 }
 
@@ -25,6 +26,7 @@ int MQuestion::product() const             { return factor1 * factor2; }
 bool MQuestion::answer(int answer)
 {
     user_answer = answer;
+    answered_at = time(0);
     return check(user_answer);
 }
 
@@ -35,4 +37,9 @@ std::string MQuestion::to_string() const
     std::string f1 = std::to_string(factor1);
     std::string f2 = std::to_string(factor2);
     return f1 + " x " + f2 + " = ";
+}
+
+time_t MQuestion::time_taken() const
+{
+    return answered_at - created_at;
 }

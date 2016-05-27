@@ -35,9 +35,10 @@ void play_game()
         int  answer = game.get_answer(std::cin);
         
         bool correct_or_incorrect = game.answer_last_question(answer);
-        game.feedback(std::cout, correct_or_incorrect);
+
+        std::cout << game.feedback(correct_or_incorrect);
     }
     
-    game.review(std::cout);
+    std::cout << game.review();
     return;
 }

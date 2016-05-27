@@ -49,29 +49,34 @@ bool MTableGame::answer_question_at(int index, int answer)
     return questions_and_answers.at(index).answer(answer);
 }
 
-void MTableGame::review(std::ostream& output)
+std::string MTableGame::review()
 {
+    std::ostringstream output;
+
     output << "\n==========\n  Review\n==========\n";
+
     for(int i = 0; i < questions_and_answers.size(); i++)
     {
         MQuestion q = questions_and_answers.at(i);
         int user_answer = q.get_user_answer();
 
         output << q.to_string() << user_answer << " ";
-        feedback(output, q.check(user_answer));
+        output << feedback(q.check(user_answer));
+
+        output << "Time taken: " << q.time_taken() << "\n";
     }
+    
+    return output.str();
 }
 
-bool MTableGame::feedback(std::ostream& output, bool correct_or_incorrect)
+std::string MTableGame::feedback(bool correct_or_incorrect)
 {
     std::string message;
     
     if(correct_or_incorrect) { message = "Correct.\n";   }
     else                     { message = "Incorrect.\n"; }
     
-    output << message;
-    
-    return correct_or_incorrect;
+    return message;
     
 }
 

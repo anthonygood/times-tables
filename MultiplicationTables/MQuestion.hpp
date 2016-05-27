@@ -23,10 +23,13 @@ public:
     bool check(int answer) const;
     int product() const;
     int get_user_answer() const;
+    time_t time_taken() const;
     
 private:
     int factor1;
     int factor2;
+    time_t created_at;
+    time_t answered_at;
     int get_rand(int max);
     int user_answer;
 };

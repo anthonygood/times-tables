@@ -30,8 +30,8 @@ public:
     MQuestion new_question();
     int get_question_count() const;
     bool answer_last_question(int answer);
-    void review(std::ostream& output);
-    bool feedback(std::ostream& output, bool correct_or_incorrect);
+    std::string review();
+    std::string feedback(bool correct_or_incorrect);
     int get_answer(std::istream& input);
     
 private:
