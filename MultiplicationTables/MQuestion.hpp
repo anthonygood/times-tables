@@ -27,6 +27,6 @@ public:
 private:
     int factor1;
     int factor2;
-    int get_rand(int seed, int max);
+    int get_rand(int max);
     int user_answer;
 };

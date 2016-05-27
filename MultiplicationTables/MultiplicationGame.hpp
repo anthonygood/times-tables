@@ -38,6 +38,7 @@ private:
     int min;
     int max;
     int question_count;
+    void initialize_seed();
     std::vector<MQuestion> questions_and_answers;
     bool answer_question_at(int index, int answer);
     

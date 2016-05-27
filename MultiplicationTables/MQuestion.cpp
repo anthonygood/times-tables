@@ -12,14 +12,13 @@
 
 MQuestion::MQuestion(int min, int max)
 {
-    int seed = static_cast<unsigned int>(time(NULL));
-    factor1 = get_rand(seed, max);
-    factor2 = get_rand(seed, max);
+    factor1 = get_rand(max);
+    factor2 = get_rand(max);
     user_answer = 911;
     return;
 }
 
-int MQuestion::get_rand(int seed, int max) { return rand() % max + 1;  }
+int MQuestion::get_rand(int max) { return rand() % max + 1;  }
 int MQuestion::get_user_answer() const     { return user_answer;       }
 int MQuestion::product() const             { return factor1 * factor2; }
 

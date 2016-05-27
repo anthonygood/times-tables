@@ -16,6 +16,7 @@ MTableGame::MTableGame(int lower, int upper, int count)
     max = upper;
     question_count = count;
     std::vector<MQuestion> questions_and_answers;
+    initialize_seed();
 
     return;
 }
@@ -72,5 +73,11 @@ bool MTableGame::feedback(std::ostream& output, bool correct_or_incorrect)
     
     return correct_or_incorrect;
     
+}
+
+void MTableGame::initialize_seed()
+{
+    int seed = static_cast<unsigned int>(time(NULL));
+    srand(seed);
 }
 
