@@ -7,6 +7,7 @@
 //
 
 #include <iostream>
+#include <iomanip>
 #include <string>
 #include "MultiplicationGame.hpp"
 
@@ -14,18 +15,17 @@ int QUESTIONS_COUNT = 3;
 int MIN = 5;
 int MAX = 12;
 
-void play_game();
-void ask_question(MQuestion);
+void test();
 
 MTableGame game = MTableGame(MIN, MAX, QUESTIONS_COUNT);
 
 int main(int argc, const char * argv[]) {
-    play_game();
+    test();
     
     return 0;
 }
 
-void play_game()
+void test()
 {
     for(int i = 0; i < game.get_question_count(); i++)
     {
@@ -36,7 +36,7 @@ void play_game()
         
         bool correct_or_incorrect = game.answer_last_question(answer);
 
-        std::cout << game.feedback(correct_or_incorrect);
+        std::cout << game.feedback(correct_or_incorrect) << ".\n";
     }
     
     std::cout << game.review();

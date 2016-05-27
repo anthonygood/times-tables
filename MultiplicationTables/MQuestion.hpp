@@ -11,6 +11,7 @@
 
 #include <stdio.h>
 #include <string>
+#include <sys/time.h>
 
 #endif /* MQuestion_hpp */
 
@@ -23,13 +24,15 @@ public:
     bool check(int answer) const;
     int product() const;
     int get_user_answer() const;
-    time_t time_taken() const;
+    float time_taken_f() const;
     
 private:
     int factor1;
     int factor2;
-    time_t created_at;
-    time_t answered_at;
-    int get_rand(int max);
     int user_answer;
+    timeval created_at;
+    timeval answered_at;
+    int get_rand(int max);
+    timeval make_timestamp() const;
+    int time_taken_msec() const;
 };

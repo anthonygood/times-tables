@@ -8,6 +8,7 @@
 
 #include "MultiplicationGame.hpp"
 #include <sstream>
+#include <iostream>
 
 
 MTableGame::MTableGame(int lower, int upper, int count)
@@ -34,7 +35,9 @@ int MTableGame::get_answer(std::istream& input)
 {
     std::string answer;
     std::getline(input, answer);
-    return std::stoi(answer);
+    if(answer.size()) { return std::stoi(answer); } // return if empty
+                                                    // TODO protect against non-integer input
+    else { return 0; }
 }
 
 bool MTableGame::answer_last_question(int answer)
@@ -63,7 +66,7 @@ std::string MTableGame::review()
         output << q.to_string() << user_answer << " ";
         output << feedback(q.check(user_answer));
 
-        output << "Time taken: " << q.time_taken() << "\n";
+        output << " (" << q.time_taken_f() << "s)\n";
     }
     
     return output.str();
@@ -73,8 +76,8 @@ std::string MTableGame::feedback(bool correct_or_incorrect)
 {
     std::string message;
     
-    if(correct_or_incorrect) { message = "Correct.\n";   }
-    else                     { message = "Incorrect.\n"; }
+    if(correct_or_incorrect) { message = "Correct";   }
+    else                     { message = "Incorrect"; }
     
     return message;
     
