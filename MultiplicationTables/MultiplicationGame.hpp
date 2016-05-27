@@ -32,6 +32,7 @@ public:
     bool answer_last_question(int answer);
     void review(std::ostream& output);
     bool feedback(std::ostream& output, bool correct_or_incorrect);
+    int get_answer(std::istream& input);
 //    std::vector<MQuestion> get_questions_and_answers();
     
 private:

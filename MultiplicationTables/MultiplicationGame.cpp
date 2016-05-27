@@ -21,13 +21,19 @@ MTableGame::MTableGame(int lower, int upper, int count)
 }
 
 int MTableGame::get_question_count() const { return question_count; }
-//std::vector<MQuestion> MTableGame::get_questions_and_answers() { return questions_and_answers; }
 
 MQuestion MTableGame::new_question()
 {
     MQuestion question = MQuestion(min, max);
     questions_and_answers.push_back(question);
     return question;
+}
+
+int MTableGame::get_answer(std::istream& input)
+{
+    std::string answer;
+    std::getline(input, answer);
+    return std::stoi(answer);
 }
 
 bool MTableGame::answer_last_question(int answer)
@@ -44,6 +50,7 @@ bool MTableGame::answer_question_at(int index, int answer)
 
 void MTableGame::review(std::ostream& output)
 {
+    output << "\nReview\n======\n";
     for(int i = 0; i < questions_and_answers.size(); i++)
     {
         MQuestion q = questions_and_answers.at(i);

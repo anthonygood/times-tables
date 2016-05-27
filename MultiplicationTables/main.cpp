@@ -16,33 +16,6 @@ int MAX = 12;
 
 void play_game();
 void ask_question(MQuestion);
-int  get_answer();
-bool feedback(bool);
-void review();
-
-void vector_log()
-{
-    std::vector<MQuestion> questions_and_answers;
-    
-    std::cout << "Begin.\n";
-    
-    questions_and_answers.push_back(MQuestion(1,7));
-    
-    std::cout << questions_and_answers.size() << std::endl;
-    
-    questions_and_answers.push_back(MQuestion(2,9));
-    
-    MQuestion rogue_question = MQuestion(4,8);
-    
-    questions_and_answers.push_back(rogue_question);
-    
-    std::cout << questions_and_answers.size() << std::endl;
-    
-    for(int i = 0; i < questions_and_answers.size(); i++)
-    {
-        std::cout << questions_and_answers[i].to_string() << std::endl;
-    }
-};
 
 MTableGame game = MTableGame(MIN, MAX, QUESTIONS_COUNT);
 
@@ -58,9 +31,10 @@ void play_game()
     {
         ask_question(game.new_question());
 
-        int  answer = get_answer();
+        int  answer = game.get_answer(std::cin);
         
-        game.answer_last_question(answer);
+        bool correct_or_incorrect = game.answer_last_question(answer);
+        game.feedback(std::cout, correct_or_incorrect);
     }
     
     game.review(std::cout);
@@ -71,11 +45,4 @@ void ask_question(MQuestion question)
 {
     std::cout << question.to_string();
     return;
-}
-
-int get_answer()
-{
-    std::string answer;
-    std::getline(std::cin, answer);
-    return std::stoi(answer);
 }
