@@ -19,11 +19,14 @@ class MQuestion
 public:
     MQuestion(int min, int max);
     std::string to_string() const;
-    bool answer(int answer) const;
+    bool answer(int answer);
+    bool check(int answer) const;
+    int product() const;
+    int get_user_answer() const;
     
 private:
     int factor1;
     int factor2;
     int get_rand(int seed, int max);
-    int product() const;
+    int user_answer;
 };

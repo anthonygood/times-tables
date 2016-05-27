@@ -11,6 +11,7 @@
 
 #include <stdio.h>
 #include "MQuestion.hpp"
+#include <vector>
 
 #endif /* MultiplicationGame_hpp */
 
@@ -26,13 +27,18 @@ class MTableGame
 
 public:
     MTableGame(int min, int max, int question_count);
-    MQuestion get_question() const;
+    MQuestion new_question();
     int get_question_count() const;
+    bool answer_last_question(int answer);
+    void review(std::ostream& output);
+    bool feedback(std::ostream& output, bool correct_or_incorrect);
+//    std::vector<MQuestion> get_questions_and_answers();
     
 private:
     int min;
     int max;
     int question_count;
-    QuestionAndAnswer questions_and_answers[];
+    std::vector<MQuestion> questions_and_answers;
+    bool answer_question_at(int index, int answer);
     
 };
