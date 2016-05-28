@@ -76,8 +76,8 @@ std::string MTableGame::feedback(bool correct_or_incorrect)
 {
     std::string message;
     
-    if(correct_or_incorrect) { message = "\u2713";  } // cross
-    else                     { message = "\u274C";  } // tick
+    if(correct_or_incorrect) { message = "\u2713";  } // tick
+    else                     { message = "\u274C";  } // cross
     
     return message;
     
