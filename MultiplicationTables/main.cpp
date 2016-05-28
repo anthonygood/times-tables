@@ -11,7 +11,7 @@
 #include <string>
 #include "MultiplicationGame.hpp"
 
-int QUESTIONS_COUNT = 3;
+int QUESTIONS_COUNT = 5;
 int MIN = 5;
 int MAX = 12;
 
@@ -36,7 +36,7 @@ void test()
         
         bool correct_or_incorrect = game.answer_last_question(answer);
 
-        std::cout << game.feedback(correct_or_incorrect) << ".\n";
+        std::cout << game.feedback(correct_or_incorrect) << std::endl;
     }
     
     std::cout << game.review();
